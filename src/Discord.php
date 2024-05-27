@@ -336,7 +336,7 @@ class Discord extends \Psr\Log\AbstractLogger implements MiddlewareInterface
             try {               
                 $obj = mb_convert_encoding($obj, 'UTF-8', 'auto');
             }catch(\Throwable $e ) {
-                throw new\Exception('Discord Issue :: only utf-8 characters can be json_encoded and mb_convert_encoding failed');
+                throw new \Exception('Discord Issue :: only utf-8 characters can be json_encoded and mb_convert_encoding failed');
             }
             $hookObject = json_encode($obj, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR );
         }
